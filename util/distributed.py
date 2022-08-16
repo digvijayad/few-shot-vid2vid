@@ -13,8 +13,8 @@ import torch.distributed as dist
 
 
 def init_dist(launcher='pytorch', backend='nccl', **kwargs):
-    raise ValueError('Distributed training is not fully tested yet and might be unstable. '
-        'If you are confident to run it, please comment out this line.')
+    # raise ValueError('Distributed training is not fully tested yet and might be unstable. '
+    #     'If you are confident to run it, please comment out this line.')
     if dist.is_initialized():
         return torch.cuda.current_device()    
     set_random_seed(get_rank())

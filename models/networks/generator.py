@@ -211,7 +211,7 @@ class FewShotGenerator(BaseNetwork):
         img_raw = torch.tanh(x)        
 
         ### combine with reference / previous images
-        if not self.spade_combine:
+        if  self.spade_combine:
             ### combine raw result with reference image
             if self.warp_ref:
                 img_final = img_raw * flow_mask_ref + img_ref_warp * (1 - flow_mask_ref)        
